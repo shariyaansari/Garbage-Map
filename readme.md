@@ -1,7 +1,8 @@
 # 🌍 Garbage Map – Smart Waste Reporting & Management System
 
 ## 📌 Project Description
-Garbage Map is a full-stack web application designed to tackle urban waste management problems by enabling citizens to report garbage locations in real time. The platform allows users to upload images, tag locations on a map, and notify authorities for quick action.
+
+Garbage Map is a full-stack web application built using **Python Django** to tackle urban waste management problems by enabling citizens to report garbage locations in real time. The platform allows users to upload images, tag locations on a map, and notify authorities for quick action.
 
 This system bridges the gap between citizens and municipal authorities by providing a transparent and efficient workflow for reporting, tracking, and resolving waste-related issues.
 
@@ -12,44 +13,52 @@ The project can be extended using AI to automatically classify garbage types, de
 ## 🚀 Key Features
 
 ### 👤 User Features
-- Register and login securely
-- Report garbage by:
-  - Uploading images
-  - Selecting location on map
-  - Adding description
-- View reported garbage spots on map
-- Track status (Pending / In Progress / Resolved)
+
+* Register and login securely
+* Report garbage by:
+
+  * Uploading images
+  * Selecting location on map
+  * Adding description
+* View reported garbage spots on map
+* Track status (Pending / In Progress / Resolved)
 
 ### 🛠️ Admin Features
-- Dashboard to view all reports
-- Update status of complaints
-- Assign tasks to workers
-- Monitor high-priority areas
+
+* Admin dashboard using Django Admin Panel
+* View and manage all reports
+* Update complaint status
+* Monitor high-priority areas
 
 ### 🤖 AI Features (Optional/Advanced)
-- Image classification (garbage vs non-garbage)
-- Severity detection (low, medium, high)
-- Duplicate detection
+
+* Image classification (garbage vs non-garbage)
+* Severity detection (low, medium, high)
+* Duplicate detection
 
 ---
 
 ## 🧠 Problem Statement
+
 Urban areas face significant challenges in managing waste due to lack of proper reporting systems and delayed responses. Citizens often don’t have an easy way to notify authorities about garbage accumulation.
 
 Garbage Map solves this by:
-- Providing a centralized reporting system
-- Enabling faster response from authorities
-- Improving city cleanliness through data-driven decisions
+
+* Providing a centralized reporting system
+* Enabling faster response from authorities
+* Improving city cleanliness through data-driven decisions
 
 ---
 
 ## 💡 Solution Overview
-The application uses a MERN stack architecture:
 
-- **Frontend:** React.js (map integration, UI)
-- **Backend:** Node.js + Express.js
-- **Database:** MongoDB
-- **Storage:** Cloudinary / Firebase (for images)
+The application uses a Django-based architecture:
+
+* **Backend Framework:** Django (Python)
+* **Frontend:** HTML, CSS, JavaScript (or Django Templates)
+* **Database:** SQLite (development) / PostgreSQL (production)
+* **Media Storage:** Django Media Files / Cloudinary
+* **Maps Integration:** Google Maps API / Leaflet.js
 
 Users submit reports → Stored in database → Displayed on map → Admin updates status → Users get updates
 
@@ -58,45 +67,51 @@ Users submit reports → Stored in database → Displayed on map → Admin updat
 ## 🗂️ Project Structure
 
 ```
-/client
-  /components
-  /pages
-  /services
-
-/server
-  /models
-  /routes
-  /controllers
-  /middleware
+garbage_map/
+│── manage.py
+│── db.sqlite3
+│
+├── garbage_map/        # Main project folder
+│   ├── settings.py
+│   ├── urls.py
+│
+├── reports/            # App for garbage reports
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/
+│   ├── static/
 ```
 
 ---
 
 ## 📊 Database Models (Basic)
 
-### User
-- name
-- email
-- password
-- role (user/admin)
+### User (Django Default/User Extension)
 
-### Report
-- image
-- location (lat, lng)
-- description
-- status
-- createdBy
+* username
+* email
+* password
+* role (optional)
+
+### Report Model
+
+* image
+* location (latitude, longitude)
+* description
+* status
+* created_by
+* created_at
 
 ---
 
 ## 🛠️ Tech Stack
 
-- React.js
-- Node.js
-- Express.js
-- MongoDB
-- Map API (Google Maps / Leaflet)
-- Cloudinary / Firebase Storage
+* Python
+* Django
+* HTML, CSS, JavaScript
+* SQLite / PostgreSQL
+* Google Maps API / Leaflet
 
 ---
 
@@ -112,58 +127,66 @@ Users submit reports → Stored in database → Displayed on map → Admin updat
 
 ## 📈 Future Enhancements
 
-- AI-based garbage detection
-- Heatmap for garbage-prone areas
-- Notification system (SMS/Email)
-- Government integration
-- Mobile app version
+* AI-based garbage detection using ML models
+* Heatmap for garbage-prone areas
+* Notification system (Email/SMS)
+* Mobile app version
+* Integration with municipal systems
 
 ---
 
 ## 💰 Revenue Model (Important for Viva)
 
-- Government partnerships
-- SaaS model for municipalities
-- Data insights for urban planning
-- Sponsored cleanliness campaigns
+* Government partnerships
+* SaaS model for municipalities
+* Data insights for urban planning
+* Sponsored cleanliness campaigns
 
 ---
 
 ## 🎯 Why This Project Stands Out
 
-- Solves real-world problem
-- Scalable for smart cities
-- Combines Web + Maps + AI
-- Strong social impact
+* Solves real-world problem
+* Scalable for smart cities
+* Combines Web + Maps + AI
+* Strong social impact
 
 ---
 
 ## 🧪 How to Run Locally
 
 ### 1. Clone repository
+
 ```
 git clone <repo-link>
+cd garbage_map
 ```
 
-### 2. Install dependencies
-```
-cd client
-npm install
+### 2. Create virtual environment
 
-cd ../server
-npm install
+```
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\\Scripts\\activate
 ```
 
-### 3. Run project
+### 3. Install dependencies
+
 ```
-npm run dev
+pip install -r requirements.txt
 ```
 
----
+### 4. Run migrations
 
-## 📸 Screenshots
+```
+python manage.py migrate
+```
 
----
+### 5. Run server
+
+```
+python manage.py runserver
+```
+
 
 ## 👩‍💻 Author
 
@@ -174,4 +197,3 @@ Shariya Ansari
 ## 📜 License
 
 This project is for educational purposes.
-
