@@ -162,7 +162,6 @@ npm run dev
 ---
 
 ## 📸 Screenshots
-(Add screenshots here once UI is ready)
 
 ---
 
