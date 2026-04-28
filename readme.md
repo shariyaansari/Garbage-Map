@@ -196,4 +196,4 @@ Shariya Ansari
 
 ## 📜 License
 
-This project is for educational purposes.
+This project is developed for learning and open source contribution.
